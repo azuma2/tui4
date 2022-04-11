@@ -33,10 +33,10 @@
   <tr>
     <th>Books</th>
   </tr>
-  @foreach ($likes as $like)
+  @foreach ($like as $item)
   <tr>
     <td>
-      {{$like->title}}
+      {{$item->title}}
     </td>
   </tr>
   @endforeach

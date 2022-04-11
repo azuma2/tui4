@@ -12,6 +12,7 @@ class Tui4Controller extends Controller
     public function index()
     {
         $items = Tui4::all();
+        
         return view('index', ['items' => $items,]);
     }
 

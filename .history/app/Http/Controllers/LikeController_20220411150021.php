@@ -20,7 +20,7 @@ class LikeController extends Controller
         $this->validate($request, Like::$rules);
         $form = $request->all();
         Like::create($form);
-        return redirect('book/');
+        return redirect('/');
     }
 
     public function relate(Request $request) //追記
