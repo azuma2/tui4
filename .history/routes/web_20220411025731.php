@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Tui4Controller;
 use App\Http\Controllers\LikeController;
-use App\Http\Controllers\SessionController;
 
 Route::get('/', [Tui4Controller::class, 'index']);
 Route::post('/add', [Tui4Controller::class, 'create']);
@@ -31,9 +30,6 @@ Route::prefix('book')->group(function () {//以下を追記
 Route::get('/relation', [LikeController::class, 'relate']);
 
 
-
-Route::get('/session', [SessionController::class, 'getSes']);
-Route::post('/session', [SessionController::class, 'postSes']);
 
 
 Route::get('/dashboard', function () {

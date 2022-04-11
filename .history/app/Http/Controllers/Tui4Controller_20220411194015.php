@@ -16,7 +16,7 @@ class Tui4Controller extends Controller
         $likes = Like::all();
         $data = $request->session()->get('txt');
         
-        return view('index', ['items' => $items,'likes'=>$likes,'data'=>$data]);
+        return view('index', ['items' => $items,'likes'=>$likes]);
     }
 
     public function create(Request $request)
@@ -57,6 +57,5 @@ class Tui4Controller extends Controller
         ];
         return view('index', $param);
     }
-
 
 }

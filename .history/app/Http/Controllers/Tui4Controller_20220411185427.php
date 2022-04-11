@@ -6,17 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Tui4;
-use App\Models\Like;
 
 class Tui4Controller extends Controller
 {
     public function index()
     {
         $items = Tui4::all();
-        $likes = Like::all();
-        $data = $request->session()->get('txt');
         
-        return view('index', ['items' => $items,'likes'=>$likes,'data'=>$data]);
+        return view('index', ['items' => $items,]);
     }
 
     public function create(Request $request)
@@ -58,5 +55,13 @@ class Tui4Controller extends Controller
         return view('index', $param);
     }
 
-
+    public function search(Request $request)
+{
+$item = Tui4::find($request->input);
+$param = [
+'item' => $item,
+'input' => $request->input
+];
+return view('index', $param);
+}
 }

@@ -32,8 +32,6 @@ Route::get('/relation', [LikeController::class, 'relate']);
 
 
 
-Route::get('/session', [SessionController::class, 'getSes']);
-Route::post('/session', [SessionController::class, 'postSes']);
 
 
 Route::get('/dashboard', function () {

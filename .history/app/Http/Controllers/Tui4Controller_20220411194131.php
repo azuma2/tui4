@@ -58,5 +58,11 @@ class Tui4Controller extends Controller
         return view('index', $param);
     }
 
+        public function postSes(Request $request)
+    {
+        $txt = $request->input;
+        $request->session()->put('txt',$txt);
+        return redirect('/session');
+    }
 
 }
